@@ -155,14 +155,10 @@ function selectAnswer(answerIndex) {
     console.log(answerIndex);
     const config = questionsConfig[questionIndex];
     const answer = config.answer[answerIndex];
-    console.log('config', config);
-    console.log('answer', answer);
     if (answer.correct) {
         response.textContent = "Correct!";
-        console.log("This is correct")
     } else {
         response.textContent = "Wrong!";
-        console.log("Nope")
         secondsLeft -= 10
     }
     setTimeout(function () {
@@ -178,10 +174,13 @@ submitButton.addEventListener("click", submitHighscore)
 function submitHighscore(event) {
     event.preventDefault();
     let initials = document.getElementById('initials').value;
+    let scoreArr = JSON.parse(localStorage.getItem("userScore")) || [];
     let userScore = {
         initials: initials,
         score: secondsLeft
     }
-    console.log(userScore)
+    scoreArr.push(userScore);
+    localStorage.setItem("userScore", JSON.stringify(scoreArr));
+
 }
 
