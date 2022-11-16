@@ -3,12 +3,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
 }
 
 :root {
     --hue-neutral: #00A0EE;
-    --hue-wrong: #00FF00;
-    --hue-right: #FF3333;
+    --hue-right: #00FF00;
+    --hue-wrong: #FF3333;
 }
 
 body {
@@ -16,6 +17,9 @@ body {
     height: 100vh;
 }
 
+h1 {
+    font-size: 150%;
+}
 
 #top-bar {
     display: flex;
@@ -24,6 +28,7 @@ body {
 }
 
 #quiz-intro {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +39,18 @@ body {
 }
 
 #quiz-proper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 800px;
+    max-width: 80%;
+}
+
+#submit-score {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,9 +62,22 @@ body {
 
 .btn {
     background-color: var(--hue-neutral);
-    /* padding:  */
+    padding: 0.3em, 1.2em;
+    margin: 0, 0.1em, 0.1em, 0;
+    font-size: 
 }
 
 .hidden {
     display: none !important;
+}
+
+#highscores {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 800px;
+    max-width: 80%;
 }

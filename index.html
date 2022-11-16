@@ -25,25 +25,27 @@
 
         <section id="quiz-proper" class="quiz hidden">
             <p id="question">Question</p>
-            <section id="asnwer-btn" class="btn-grid">
-                <button onclick="selectAnswer(0)" class="btn answer" id="choice1">Answer 1</button>
+            <section id="answer-btn" class="btn-grid">
+                <button onclick="selectAnswer(0)" class="btn answer">Answer 1</button>
                 <button onclick="selectAnswer(1)" class="btn answer">Answer 2</button>
                 <button onclick="selectAnswer(2)" class="btn answer">Answer 3</button>
                 <button onclick="selectAnswer(3)" class="btn answer">Answer 4</button>
             </section>
         </section>
 
+
+
         <section id="submit-score" class="hidden">
             <h1>All done!</h1>
             <br>
-            <p>Your final score is .</p>
+            <p id="score"></p>
             <form>
                 Enter initials:
-                <input type="text" name="" id="">
-                <button type="submit" class="btn">Submit</button>
+                <input type="text" name="" id="initials">
+                <button type="submit" class="btn" id="submit-btn">Submit</button>
             </form>
         </section>
-
+        <p id="rightOrWrong"></p>
     </main>
 
     <script src="script.js"></script>

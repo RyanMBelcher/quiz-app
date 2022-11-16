@@ -2,6 +2,10 @@ const startButton = document.getElementById("start-btn");
 const quizSection = document.getElementById("quiz-proper");
 const startSection = document.getElementById("quiz-intro");
 const scoreSection = document.getElementById("submit-score");
+const finalScore = document.getElementById("score");
+const response = document.getElementById("rightOrWrong");
+const submitButton = document.getElementById("submit-btn");
+
 
 const question = document.getElementById("question");
 const answer = document.getElementById("answer-btn");
@@ -108,13 +112,19 @@ function setTime() {
         secondsLeft--;
         timeEl.textContent = "Timer: " + secondsLeft;
 
-        if (secondsLeft === 0) {
+        // TODO: stop timer after last question is answered
+        if (questionIndex === questionsConfig.length || secondsLeft === 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
             quizSection.classList.add("hidden");
             scoreSection.classList.remove("hidden");
+            finalScore.textContent = "Your final score is " + secondsLeft + ".";
             // Calls function to create and append image
-            // TODO: if hits 0 go to end
+
+            // } else if (secondsLeft === 0) {
+            //     clearInterval(timerInterval);
+            //     quizSection.classList.add("hidden");
+            //     scoreSection.classList.remove("hidden");
         }
 
     }, 1000);
@@ -141,11 +151,6 @@ function setNextQuestion(index) {
     }
 }
 
-
-
-
-
-
 function selectAnswer(answerIndex) {
     console.log(answerIndex);
     const config = questionsConfig[questionIndex];
@@ -153,15 +158,30 @@ function selectAnswer(answerIndex) {
     console.log('config', config);
     console.log('answer', answer);
     if (answer.correct) {
+        response.textContent = "Correct!";
         console.log("This is correct")
     } else {
+        response.textContent = "Wrong!";
         console.log("Nope")
         secondsLeft -= 10
     }
-
+    setTimeout(function () {
+        response.textContent = "";
+    }, 2000)
     questionIndex++;
     setNextQuestion(questionIndex);
 }
 
 
+submitButton.addEventListener("click", submitHighscore)
+
+function submitHighscore(event) {
+    event.preventDefault();
+    let initials = document.getElementById('initials').value;
+    let userScore = {
+        initials: initials,
+        score: secondsLeft
+    }
+    console.log(userScore)
+}
 
