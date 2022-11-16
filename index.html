@@ -10,28 +10,40 @@
 </head>
 
 <body>
-
-    <section id="top-bar">
-        <button id="highscore-btn">View High Scores</button>
-        <p id="timer">Timer: </p>
-    </section>
-
-    <section id="quiz-intro" class="quiz">
-        <h1>Quiz Challenge</h1>
-        <p>This is a coding quiz challenge etc.</p>
-        <button id="start-btn" class="start-btn btn">Start Quiz</button>
-    </section>
-
     <main>
+        <section id="top-bar">
+            <button id="highscore-btn">View High Scores</button>
+            <p id="timer">Timer: 60</p>
+        </section>
+
+        <section id="quiz-intro" class="quiz">
+            <h1>Quiz Challenge</h1>
+            <p>This is a coding quiz challenge etc.</p>
+            <button id="start-btn" class="start-btn btn">Start Quiz</button>
+        </section>
+
+
         <section id="quiz-proper" class="quiz hidden">
             <p id="question">Question</p>
             <section id="asnwer-btn" class="btn-grid">
-                <button class="btn" id="choice1">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+                <button onclick="selectAnswer(0)" class="btn answer" id="choice1">Answer 1</button>
+                <button onclick="selectAnswer(1)" class="btn answer">Answer 2</button>
+                <button onclick="selectAnswer(2)" class="btn answer">Answer 3</button>
+                <button onclick="selectAnswer(3)" class="btn answer">Answer 4</button>
             </section>
         </section>
+
+        <section>
+            <h1>All done!</h1>
+            <br>
+            <p>Your final score is</p>
+            <form>
+                Enter initials:
+                <input type="text" name="" id="">
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+
     </main>
 
     <script src="script.js"></script>
