@@ -45,6 +45,7 @@ body {
 
 .btn {
     background-color: var(--hue-neutral);
+    /* padding:  */
 }
 
 .hidden {

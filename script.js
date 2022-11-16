@@ -1,6 +1,7 @@
 const startButton = document.getElementById("start-btn");
 const quizSection = document.getElementById("quiz-proper");
 const startSection = document.getElementById("quiz-intro");
+const scoreSection = document.getElementById("submit-score");
 
 const question = document.getElementById("question");
 const answer = document.getElementById("answer-btn");
@@ -110,6 +111,8 @@ function setTime() {
         if (secondsLeft === 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
+            quizSection.classList.add("hidden");
+            scoreSection.classList.remove("hidden");
             // Calls function to create and append image
             // TODO: if hits 0 go to end
         }
@@ -125,8 +128,13 @@ function startGame() {
 }
 
 function setNextQuestion(index) {
-    let questionConfig = questionsConfig[index]
-    question.innerHTML = questionConfig.question
+    if (index === questionsConfig.length) {
+        quizSection.classList.add("hidden");
+        scoreSection.classList.remove("hidden");
+        return;
+    }
+    let questionConfig = questionsConfig[index];
+    question.innerHTML = questionConfig.question;
     const answers = document.querySelectorAll('.answer');
     for (let i = 0; i < answers.length; i++) {
         answers[i].innerHTML = questionConfig.answer[i].text;
