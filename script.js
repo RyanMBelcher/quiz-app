@@ -5,7 +5,12 @@ const scoreSection = document.getElementById("submit-score");
 const finalScore = document.getElementById("score");
 const response = document.getElementById("rightOrWrong");
 const submitButton = document.getElementById("submit-btn");
-
+const highscoreRanking = document.getElementById("highscores");
+const goBackButton = document.getElementById("go-back");
+const clearButton = document.getElementById("clear");
+const highscoresButton = document.getElementById("highscore-btn");
+const scoreTimer = document.getElementById("top-bar");
+const rankList = document.getElementById("rankings");
 
 const question = document.getElementById("question");
 const answer = document.getElementById("answer-btn");
@@ -181,6 +186,34 @@ function submitHighscore(event) {
     }
     scoreArr.push(userScore);
     localStorage.setItem("userScore", JSON.stringify(scoreArr));
-
+    scoreSection.classList.add("hidden");
+    highscoreRanking.classList.remove("hidden");
+    showHighscore();
 }
 
+function showHighscore() {
+    scoreTimer.classList.add("hidden");
+    const scoreArr = JSON.parse(localStorage.getItem("userScore"));
+
+
+    for (let i = 0; i < scoreArr.length; i++) {
+        const scoreRank = document.createElement("li");
+        rankList.appendChild(scoreRank);
+        scoreRank.textContent = scoreArr[i].initials + " - " + scoreArr[i].score;
+    }
+}
+
+clearButton.addEventListener("click", clearScores);
+
+function clearScores() {
+    localStorage.removeItem("userScore");
+    rankList.innerHTML = "";
+}
+
+highscoresButton.addEventListener("click", goToHighscores)
+
+function goToHighscores() {
+    startSection.classList.add("hidden");
+    highscoreRanking.classList.remove("hidden");
+    showHighscore();
+}

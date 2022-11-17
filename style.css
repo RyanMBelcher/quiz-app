@@ -6,12 +6,6 @@
     font-size: 22px;
 }
 
-:root {
-    --hue-neutral: #00A0EE;
-    --hue-right: #00FF00;
-    --hue-wrong: #FF3333;
-}
-
 body {
     width: 100vw;
     height: 100vh;
@@ -103,17 +97,14 @@ h1 {
     border: 2px solid black;
     border-radius: 2em;
     cursor: pointer;
+    text-align: left;
 }
 
 .btn:hover {
     border: 2px solid white;
 }
 
-.rightOrWrong {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .hidden {
     display: none !important;
@@ -128,4 +119,5 @@ h1 {
     padding: 10px;
     width: 800px;
     max-width: 80%;
+    background-color: #BAE8E8;
 }
