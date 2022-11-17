@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Coding Quiz Challenge</title>
+    <title>Rules of Golf Quiz Challenge</title>
 </head>
 
 <body>
@@ -17,9 +17,9 @@
         </section>
 
         <section id="quiz-intro" class="quiz">
-            <h1 id="quiz-title">Quiz Challenge</h1>
-            <p id="quiz-details">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
-                will penalize your score/time by ten seconds.</p>
+            <h1 id="quiz-title">Rules of Golf Quiz Challenge</h1>
+            <p id="quiz-details">How well do you know the rules of golf? Try to answer the following questions within the time limit. Keep in
+                mind that incorrect answers will penalize your score/time by ten seconds.</p>
             <button id="start-btn" class="start-btn btn">Start Quiz</button>
         </section>
 
@@ -47,7 +47,11 @@
                 <button type="submit" class="btn" id="submit-btn">Submit</button>
             </form>
         </section>
-        <p id="rightOrWrong"></p>
+
+        <section id="right-wrong">
+            <p id="right-or-wrong"></p>
+        </section>
+
 
 
         <section id="highscores" class="hidden">
@@ -57,9 +61,10 @@
             <ol id="rankings">
 
             </ol>
-
-            <button onclick="history.go()" id="go-back" class="btn btn-grid">Go Back</button>
-            <button id="clear" class="btn btn-grid">Clear Highscores</button>
+            <section>
+                <button onclick="history.go()" id="go-back" class="btn">Go Back</button>
+                <button id="clear" class="btn">Clear Highscores</button>
+            </section>
         </section>
 
     </main>

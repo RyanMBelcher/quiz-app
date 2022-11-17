@@ -79,13 +79,23 @@ h1 {
     background-color: #BAE8E8
 }
 
+/* .question {
+    margin: 25px;
+    padding: 25px;
+} */
+
+#right-wrong {
+    display: flex;
+    justify-content: center;
+}
+
 .btn-grid {
     margin-top: 10px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    column-gap: 5px;
-    grid-row-gap: 5px;
+    column-gap: 25px;
+    grid-row-gap: 25px;
 }
 
 .btn {
@@ -104,7 +114,26 @@ h1 {
     border: 2px solid white;
 }
 
+.buttons {
+    display: grid;
+    grid-row: auto auto;
+}
 
+#highscore-btn {
+    background-color: transparent;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0;
+    cursor: pointer;
+  }
+
+#highscore-btn:hover {
+      color: #2C698D;
+  }
 
 .hidden {
     display: none !important;
@@ -118,6 +147,7 @@ h1 {
     flex-direction: column;
     padding: 10px;
     width: 800px;
+    height: 400px;
     max-width: 80%;
     background-color: #BAE8E8;
 }

@@ -3,7 +3,7 @@ const quizSection = document.getElementById("quiz-proper");
 const startSection = document.getElementById("quiz-intro");
 const scoreSection = document.getElementById("submit-score");
 const finalScore = document.getElementById("score");
-const response = document.getElementById("rightOrWrong");
+const response = document.getElementById("right-or-wrong");
 const submitButton = document.getElementById("submit-btn");
 const highscoreRanking = document.getElementById("highscores");
 const goBackButton = document.getElementById("go-back");
@@ -22,87 +22,87 @@ let questionIndex = 0
 
 const questionsConfig = [
     {
-        question: "Commonly used data types do not include:",
+        question: "According to rule 4.1.b, a player may have no more than how many clubs in his bag at the start of or at any time during a round?",
         answer: [
             {
-                text: "1. Strings", correct: false
+                text: "1. 18 Clubs", correct: false
             },
             {
-                text: "2. Booleans", correct: false
+                text: "2. 16 Clubs", correct: false
             },
             {
-                text: "3. Alerts", correct: true
+                text: "3. 14 Clubs", correct: true
             },
             {
-                text: "4. Numbers", correct: false
+                text: "4. 12 Clubs", correct: false
             }
         ]
     },
     {
-        question: "The condition in an if/else statement is enclosed within ____.",
+        question: "If a player's ball is on the green and there is abnormal interfence by an abnormal course condition (for example, casual water) what option does the player have?",
         answer: [
             {
-                text: "1. Quotes", correct: false
+                text: "1. Move the ball to the nearest point of complete relief.", correct: true
             },
             {
-                text: "2. Curly Brackets", correct: false
+                text: "2. Wait for the water to dry up.", correct: false
             },
             {
-                text: "3. Parentheses", correct: true
+                text: "3. Play the ball as it lies.", correct: false
             },
             {
-                text: "4. Square Brackets", correct: false
+                text: "4. Give up. Golf is too hard anyways.", correct: false
             }
         ]
     },
     {
-        question: "Arrays in JavaScript can be used to store ____",
+        question: "What happens if a plays ball that is at rest moves due to natural forces (wind or water)?",
         answer: [
             {
-                text: "1. Numbers and Strings", correct: false
+                text: "1. There is a one stroke penalty and the ball must be moved back to its previous spot.", correct: false
             },
             {
-                text: "2. Other Arrays", correct: false
+                text: "2. There is no penalty and the ball must be moved back to is previous spot.", correct: false
             },
             {
-                text: "3. Booleans", correct: false
+                text: "3. There is a one stroke penalty and the must be played from its new spot.", correct: false
             },
             {
-                text: "4. All of the Above", correct: true
+                text: "4. There is no penalty and the ball must be played from its new spot.", correct: true
             }
         ]
     },
     {
-        question: "String values must be enclosed within ____ when being assiged to variables.",
+        question: "What is the penalty for lifting your ball without marking its spot?",
         answer: [
             {
-                text: "1. Commas", correct: false
+                text: "1. No penalty", correct: false
             },
             {
-                text: "2. Curly Brackets", correct: false
+                text: "2. 1 Stroke", correct: true
             },
             {
-                text: "3. Quotes", correct: true
+                text: "3. 2 Strokes", correct: false
             },
             {
-                text: "4. Parentheses", correct: false
+                text: "4. Disqualification", correct: false
             }
         ]
     },
     {
-        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        question: "What is the penalty for a player deliberatly moving, bending, or breaking and growing or attached natural object in order to improve conditions affecting his or her stroke?:",
         answer: [
             {
-                text: "1. JavaScript", correct: false
+                text: "1. Disqualification", correct: false
             },
             {
-                text: "2. Terminal/Bash", correct: false
+                text: "2. One Stroke", correct: false
             },
             {
-                text: "3. For Loops", correct: false
+                text: "3. Nothing, the greenskeeper should have removed that branch.", correct: false
             },
             {
-                text: "4. Console.Log", correct: true
+                text: "4. Two Strokes", correct: true
             }
         ]
     }
@@ -215,5 +215,6 @@ highscoresButton.addEventListener("click", goToHighscores)
 function goToHighscores() {
     startSection.classList.add("hidden");
     highscoreRanking.classList.remove("hidden");
+    quizSection.classList.add("hidden");
     showHighscore();
 }
