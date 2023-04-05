@@ -6,7 +6,7 @@ This a quiz that will test the user's knowledge of the rules of golf. Upon visit
 
 ## Installation 
 
-This web app can be accessed at ryanmbelcher.github.io/quiz-app
+This web app can be accessed at https://ryanmbelcher.github.io/quiz-app
 
 ## Usage
 
